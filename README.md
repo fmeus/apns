@@ -8,5 +8,4 @@ Additional information on creating the p12 certificates and the test script, see
 
 `apns_test.php` -- Script to test APNS certificates by sending a push notification using both the Sandbox and Production certificate
 
-*[PEM]: Privacy Enhanced Mail
 [post]: http://scriptogr.am/fmeus/post/2013-06-10-renewing-apns-certificates-ios
