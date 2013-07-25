@@ -1,12 +1,14 @@
 <?php
 /* Production settings */
-$production = array( 'ssl' => 'ssl://gateway.push.apple.com:2195'
+$production = array( 'label' => 'Prodcution'
+	               , 'ssl' => 'ssl://gateway.push.apple.com:2195'
 	               , 'cert' => 'apns-prod.pem'
 	               , 'passphrase' => ''
 	               , 'token' => '<insert valid token for production device>' );
 
 /* Development settings */
-$development = array( 'ssl' => 'ssl://gateway.sandbox.push.apple.com:2195'
+$development = array( 'label' => 'Development'
+	                , 'ssl' => 'ssl://gateway.sandbox.push.apple.com:2195'
 	                , 'cert' => 'apns-dev.pem'
 	                , 'passphrase' => ''
 	                , 'token' => '<insert valid token for sandbox/development device>' );
@@ -24,11 +26,11 @@ function send_apns( $config ) {
 
 	if (!$fp) { exit( "Failed to connect: $err $errstr" . PHP_EOL ); }
 
-	echo 'Connected to APNS' . PHP_EOL;
+	echo 'Connected to APNS ('.$config['label'].')'.PHP_EOL;
 
 	/* Create the payload body */
 	$body['aps'] = array( 'badge' => 1
-		                , 'alert' => 'Test Push Notification'
+		                , 'alert' => 'Test Push Notification ('.$config['label'].')'
 		                , 'sound' => 'default' );
 
 	/* Encode the payload as JSON */
@@ -39,7 +41,7 @@ function send_apns( $config ) {
 
 	 /* Send it to the server */
 	$result = fwrite( $fp, $msg, strlen( $msg ) );
-	echo (!$result)? 'Message not delivered' . PHP_EOL : 'Message successfully delivered' . PHP_EOL;
+	echo (!$result)? 'Message not delivered'.PHP_EOL : 'Message successfully delivered'.PHP_EOL;
 
 	/* Close the connection to the server */
 	fclose( $fp );
