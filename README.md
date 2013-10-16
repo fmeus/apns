@@ -8,4 +8,4 @@ Additional information on creating the p12 certificates and the test script, see
 
 `apns_test.php` -- Script to test APNS certificates by sending a push notification using both the Sandbox and Production certificate
 
-[post]: http://scriptogr.am/fmeus/post/2013-06-10-renewing-apns-certificates-ios
+[post]: http://sharedmemorydump.net/post/2013-06-10-renewing-apns-certificates-ios
