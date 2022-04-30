@@ -1,14 +1,14 @@
 <?php
 /* Production settings */
 $production = array( 'label' => 'Prodcution'
-	               , 'ssl' => 'ssl://gateway.push.apple.com:2195'
+	               , 'ssl' => 'tls://gateway.push.apple.com:2195'
 	               , 'cert' => 'apns-prod.pem'
 	               , 'passphrase' => ''
 	               , 'token' => '<insert valid token for production device>' );
 
 /* Development settings */
 $development = array( 'label' => 'Development'
-	                , 'ssl' => 'ssl://gateway.sandbox.push.apple.com:2195'
+	                , 'ssl' => 'tls://gateway.sandbox.push.apple.com:2195'
 	                , 'cert' => 'apns-dev.pem'
 	                , 'passphrase' => ''
 	                , 'token' => '<insert valid token for sandbox/development device>' );
